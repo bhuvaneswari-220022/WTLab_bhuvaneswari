@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+    background-color: #eef2f5;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+/* Layout */
+.container {
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: white;
+    margin-top: 15px;
+}
+
+/* Grid */
+.grid {
+    display: flex;
+    gap: 20px;
+}
+
+/* Buttons */
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Form */
+input, textarea {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+/* Images */
+img {
+    width: 150px;
+    border: 1px solid #999;
+}
