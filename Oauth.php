@@ -19,7 +19,6 @@ $CLIENT_SECRET = getenv('GOOGLE_CLIENT_SECRET');
 $REDIRECT_URI = getenv('GOOGLE_REDIRECT_URI'); 
 if (!$CLIENT_ID || !$CLIENT_SECRET || !$REDIRECT_URI) { 
 die("
-❌
  Missing OAuth environment variables in .env file"); 
 } 
 // ================== OAUTH FLOW ================== 
@@ -76,7 +75,6 @@ curl_close($ch);
 $user = json_decode($userinfo, true); 
 // Step 5: Show result 
 echo "<h2>Login Successful 
-✅
 </h2>"; 
 echo "<p><strong>Name:</strong> " . htmlspecialchars($user['name'] ?? '') . 
 "</p>"; 
