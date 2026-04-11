@@ -1,9 +1,11 @@
 window.onload = function () {
 
-  //VARIABLES
+  // VARIABLES
   const websiteName = "Online Resume Builder";
   let role = "Student";
   let experience = 0;
+
+  console.log(websiteName, role, experience);
 
   document.getElementById("roleText").innerText =
     "Role: " + role;
@@ -17,25 +19,42 @@ window.onload = function () {
       "Experience: " + experience + " years";
   });
 
-  //FUNCTIONS
+  // FUNCTIONS
+
+  // Function Declaration
   function getWelcomeMessage() {
     return "Welcome to QUICKRESUME!";
   }
 
+  // Function Expression
   var showWelcomeText = function (msg) {
     document.getElementById("welcomeText").innerText = msg;
   };
+
+  // Arrow Function (ADDED)
+  const addExp = (a, b) => a + b;
+  console.log("Arrow Function Output:", addExp(2, 3));
 
   window.changeWelcome = function () {
     var message = getWelcomeMessage();
     showWelcomeText(message);
   };
-  //OBJECTS 
+
+  // OBJECTS
   var profile = {
     name: "Bhuvana",
     role: "Student",
     skills: "HTML, CSS, JavaScript"
   };
+
+  // Dot notation
+  console.log(profile.name);
+
+  // Bracket notation (ADDED)
+  console.log(profile["role"]);
+
+  // Log object (ADDED)
+  console.log(profile);
 
   document.getElementById("profileText").innerText =
     "Name: " + profile.name +
@@ -50,7 +69,7 @@ window.onload = function () {
       ", Skills: " + profile.skills;
   });
 
-  //METHODS
+  // METHODS
   var user = {
     name: "Bhuvana",
     role: "Student",
@@ -68,7 +87,7 @@ window.onload = function () {
       user.updateDetails();
   });
 
-  //POPUPS
+  // POPUPS
   window.showAlert = function () {
     alert("Profile updated successfully!");
   };
@@ -83,5 +102,18 @@ window.onload = function () {
     document.getElementById("popupResult").innerText =
       userName ? "Hello " + userName : "No name entered";
   };
+
+  // EVENTS (ADDED EXTRA EVENT)
+
+  // Hover event
+  let profileBox = document.getElementById("profileText");
+
+  profileBox.addEventListener("mouseover", function () {
+    profileBox.style.color = "blue";
+  });
+
+  profileBox.addEventListener("mouseout", function () {
+    profileBox.style.color = "black";
+  });
 
 };
