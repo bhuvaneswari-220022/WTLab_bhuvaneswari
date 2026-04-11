@@ -14,12 +14,15 @@ if (!str_contains($line, '=')) continue;
 putenv(trim($name) . '=' . trim($value)); 
 } 
 } 
-$CLIENT_ID = getenv('GOOGLE_CLIENT_ID'); 
-$CLIENT_SECRET = getenv('GOOGLE_CLIENT_SECRET'); 
-$REDIRECT_URI = getenv('GOOGLE_REDIRECT_URI'); 
-if (!$CLIENT_ID || !$CLIENT_SECRET || !$REDIRECT_URI) { 
-die("
- Missing OAuth environment variables in .env file"); 
+$CLIENT_ID = getenv('GOOGLE_CLIENT_ID');
+$CLIENT_SECRET = getenv('GOOGLE_CLIENT_SECRET');
+$REDIRECT_URI = getenv('GOOGLE_REDIRECT_URI');
+// Fallback for development (replace with your actual credentials)
+if (!$CLIENT_ID) $CLIENT_ID = 'YOUR_CLIENT_ID_HERE';
+if (!$CLIENT_SECRET) $CLIENT_SECRET = 'YOUR_CLIENT_SECRET_HERE';
+if (!$REDIRECT_URI) $REDIRECT_URI = 'http://localhost/Task01_QuickResume/Oauth.php';
+if (!$CLIENT_ID || !$CLIENT_SECRET || !$REDIRECT_URI) {
+    die('Missing OAuth environment variables. Set them in .env or update the fallbacks in the code.');
 } 
 // ================== OAUTH FLOW ================== 
 if (!isset($_GET['code'])) { 
